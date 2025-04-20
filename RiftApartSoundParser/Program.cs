@@ -6,6 +6,12 @@ class Program
 {
     static void Main(string[] args)
     {
+        if (args.Length != 3)
+        {
+            Console.WriteLine("Usage: RiftApartWwiseSort <extracted_soundbank_folder> <extracted_wem_folder> <output_directory>");
+            return;
+        }
+
         string extractedTocArg = args[0];
         string extractedWemArg = args[1];
         string outputDirArg = args[2];
@@ -14,19 +20,19 @@ class Program
         string extractedWemFolder = Path.GetFullPath(extractedWemArg);
         string outputDir = Path.GetFullPath(outputDirArg);
 
-        if (extractedTocFolder == null) {
+        if (extractedTocArg == null) {
 
             Console.WriteLine("Please provide the path to the extracted table of contents folder.");
             return;
         }
 
-        if (extractedWemFolder == null)
+        if (extractedWemArg == null)
         {
             Console.WriteLine("Please provide the path to the extracted WEM folder.");
             return;
         }
 
-        if (outputDir == null)
+        if (outputDirArg == null)
         {
             Console.WriteLine("Please provide the path to the output directory.");
             return;
