@@ -65,6 +65,8 @@ class Program
         var progress = 1;
         var parsed = 0;
         var skipped = 0;
+        var errortxt = 0;
+        var errorwemnotfound = 0;
 
         foreach (string folder in folders)
         {
@@ -74,6 +76,7 @@ class Program
             {
                 Console.WriteLine($"({progress}/{folderCount}) No .txt files found in folder: {folder}");
                 progress++;
+                errortxt++;
                 skipped++;
                 continue;
             }
@@ -87,6 +90,7 @@ class Program
                 Console.WriteLine($"({progress}/{folderCount}) Error: No WEM file found for {txtFileName} in {extractedWemFolder}.");
                 progress++;
                 skipped++;
+                errorwemnotfound++;
                 continue;
             }
             string wemFile = wemFiles[0];
@@ -106,7 +110,8 @@ class Program
             parsed++;
         }
 
-        Console.WriteLine($"Parsed {parsed} files and skipped {skipped} files.");
+        Console.WriteLine($"Parsed {parsed} files, skipped {skipped} files.");
+        Console.WriteLine($"Errors: {errortxt} text files errors, {errorwemnotfound} WEM files not found.");
 
     }
 }
