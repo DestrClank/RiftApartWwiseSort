@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RiftApartSoundParser": {
+      "commandName": "Project",
+      "commandLineArgs": "\"C:\\Users\\dylan\\Downloads\\racra-wwise-maing\\racra-wwise-main\\extracted\\music\" \"C:\\Users\\dylan\\Downloads\\racra-wwise-maing\\racra-wwise-main\\wem\" output"
+    }
+  }
+}
